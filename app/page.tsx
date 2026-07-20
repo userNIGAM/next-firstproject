@@ -24,9 +24,11 @@ export default function Home() {
             </div>
           </div>
           <CategoriesCard />
-          {firstThree.map((item)=>(
+          <div className="grid grid-cols-3 gap-3 p-5">
+            {firstThree.map((item)=>(
             <ResourcesCard key={item.id} resource={item}/>
           ))}
+          </div>
         </div>
       </div>
     </>
