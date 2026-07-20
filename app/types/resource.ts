@@ -7,3 +7,4 @@ export type Resource = {
   rating: number;
   image: string;
 };
+

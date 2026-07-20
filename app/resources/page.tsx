@@ -8,6 +8,14 @@ export default function Resources() {
       <div>
         <div>
           <h2>Resources</h2>
+          <div className="m-3">
+            <Link
+              className="bg-blue-500 border border-blue-400 hover:bg-blue-600 m-2 p-2 w-full rounded-2xl"
+              href="/"
+            >
+              Back
+            </Link>
+          </div>
           <div className="grid grid-cols-4 gap-4">
             {resources.map((item) => (
               <div key={item.id}>
