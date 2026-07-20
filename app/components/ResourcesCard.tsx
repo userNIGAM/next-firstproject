@@ -29,8 +29,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
   const iconKey = resource.category || "Uncategorized";
   const iconClass = resourceIcons[iconKey] || "fa-regular fa-file";
   const colorClass =
-    iconColorClasses[iconKey] ||
-    "from-gray-100 to-gray-200/70 text-gray-600";
+    iconColorClasses[iconKey] || "from-gray-100 to-gray-200/70 text-gray-600";
 
   // Decide badge (Free if price === 0, else Premium)
   const isFree = resource.price === 0 || resource.price == null;
@@ -47,7 +46,7 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
       <div className="flex items-start gap-4">
         {/* Icon */}
         <div
-          className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center text-xl transition-transform group-hover:scale-110`}
+          className={`shrink-0 w-12 h-12 rounded-xl bg-linear-to-br ${colorClass} flex items-center justify-center text-xl transition-transform group-hover:scale-110`}
         >
           <i className={iconClass} />
         </div>
@@ -57,7 +56,9 @@ export default function ResourceCard({ resource }: ResourceCardProps) {
           <h3 className="font-bold text-gray-800 text-base group-hover:text-purple-700 transition-colors truncate">
             {resource.title}
           </h3>
-          <p className="text-sm text-gray-500 truncate">{resource.description}</p>
+          <p className="text-sm text-gray-500 truncate">
+            {resource.description}
+          </p>
           <div className="flex items-center gap-3 mt-1.5">
             <span
               className={`text-xs font-medium px-2 py-0.5 rounded-full ${badgeColor}`}

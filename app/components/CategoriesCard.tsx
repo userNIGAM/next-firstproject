@@ -65,11 +65,11 @@ export default function CategoriesCard() {
           return (
             <div
               key={cat.name}
-              className="flex-shrink-0 w-44 md:w-52 p-4 rounded-2xl bg-white/80 border border-purple-100/50 shadow-sm cursor-pointer hover:shadow-md hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 group"
+              className="shrink-0 w-44 md:w-52 p-4 rounded-2xl bg-white/80 border border-purple-100/50 shadow-sm cursor-pointer hover:shadow-md hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 group"
             >
               <div className="flex items-center gap-3">
                 <span
-                  className={`w-10 h-10 rounded-xl bg-gradient-to-br ${colorClass} flex items-center justify-center group-hover:scale-110 transition-transform`}
+                  className={`w-10 h-10 rounded-xl bg-linear-to-br ${colorClass} flex items-center justify-center group-hover:scale-110 transition-transform`}
                 >
                   <i className={`${iconClass} text-sm`} />
                 </span>

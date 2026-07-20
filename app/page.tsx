@@ -70,17 +70,6 @@ export default function Home() {
         {/* ─── CATEGORIES ─── */}
         <section id="categories" className="mb-8">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg md:text-xl font-bold text-gray-800 flex items-center gap-2">
-              <i className="fa-solid fa-grid-2 text-purple-500 text-sm" />
-              Categories
-            </h3>
-            <Link
-              href="#"
-              className="text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors flex items-center gap-1"
-            >
-              See all
-              <i className="fa-solid fa-arrow-right text-[10px]" />
-            </Link>
           </div>
           <CategoriesCard />
         </section>

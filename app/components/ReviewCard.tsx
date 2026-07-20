@@ -12,14 +12,23 @@ export default function ReviewCard({ review }: ReviewCardProps) {
     const stars = [];
 
     for (let i = 0; i < fullStars; i++) {
-      stars.push(<i key={`full-${i}`} className="fa-solid fa-star text-amber-400" />);
+      stars.push(
+        <i key={`full-${i}`} className="fa-solid fa-star text-amber-400" />,
+      );
     }
     if (hasHalfStar) {
-      stars.push(<i key="half" className="fa-solid fa-star-half-stroke text-amber-400" />);
+      stars.push(
+        <i
+          key="half"
+          className="fa-solid fa-star-half-stroke text-amber-400"
+        />,
+      );
     }
     const emptyStars = 5 - stars.length;
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<i key={`empty-${i}`} className="fa-regular fa-star text-amber-400" />);
+      stars.push(
+        <i key={`empty-${i}`} className="fa-regular fa-star text-amber-400" />,
+      );
     }
     return stars;
   };
@@ -37,7 +46,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
     <div className="group bg-white/90 rounded-2xl p-5 shadow-sm hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-purple-100/50">
       {/* Header: avatar + username + rating */}
       <div className="flex items-start gap-3 mb-3">
-        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-purple-100 to-purple-200/70 flex items-center justify-center text-purple-600 text-base">
+        <div className="shrink-0 w-10 h-10 rounded-full bg-linear-to-br from-purple-100 to-purple-200/70 flex items-center justify-center text-purple-600 text-base">
           <i className="fa-regular fa-user" />
         </div>
         <div className="flex-1 min-w-0">
