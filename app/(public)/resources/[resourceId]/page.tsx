@@ -1,5 +1,5 @@
-import ResourceCard from "@/app/components/ResourcesCard";
-import { resources } from "@/app/data/data";
+import ResourceCard from "../../../components/ResourcesCard";
+import { resources } from "../../../data/data";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -8,6 +8,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ resourceId: string }>;
 }) {
+    await new Promise((resolve) => setTimeout(resolve, 3000) )
+
   const { resourceId } = await params;
   const resource = resources.find((item) => item.id.toString() === resourceId);
   if (!resource) {
@@ -27,6 +29,12 @@ export default async function ResourcesPage({
 }: {
   params: Promise<{ resourceId: string }>;
 }) {
+  // throw new Error("Oops! I broke the resource page.");
+  const random = Math.random();
+  if(random < 0.5){
+    throw new Error("Random Error!")
+  }
+  await new Promise((resolve) =>setTimeout(resolve, 3000 ))
   const { resourceId } = await params;
   const resource = resources.find((item) => item.id.toString() === resourceId);
 
@@ -151,6 +159,7 @@ export default async function ResourcesPage({
           <Link
             href={`/resources/${resource.id}/review`}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-linear-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-full shadow-lg shadow-purple-500/30 hover:shadow-purple-500/40 transition-all duration-300 text-sm md:text-base"
+                
           >
             <i className="fa-regular fa-message" />
             View Reviews

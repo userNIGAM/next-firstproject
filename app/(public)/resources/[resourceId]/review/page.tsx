@@ -1,14 +1,16 @@
-import ReviewCard from "@/app/components/ReviewCard";
-import { reviews } from "@/app/data/reviews";
+import ReviewCard from "../../../../components/ReviewCard";
+import { reviews } from "../../../../data/reviews";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { resources } from "@/app/data/data";
+import { resources } from "../../../../data/data";
 
 export default async function ReviewPage({
   params,
 }: {
   params: Promise<{ resourceId: string }>;
 }) {
+  // throw new Error("Oops! I broke the resource page.");
+    await new Promise((resolve) => setTimeout(resolve, 3000) )
   const { resourceId} = await params;
 
   const resource = resources.find((item) => item.id.toString() === resourceId);

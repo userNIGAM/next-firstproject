@@ -1,7 +1,7 @@
-import { resources } from "@/app/data/data";
+import { resources } from "../../../../../data/data";
 import { notFound } from "next/navigation";
-import ReviewCard from "@/app/components/ReviewCard";
-import { reviews } from "@/app/data/reviews";
+import ReviewCard from "../../../../../components/ReviewCard";
+import { reviews } from "../../../../../data/reviews";
 import Link from "next/link";
 
 export default async function ReviewDetails({
@@ -9,6 +9,7 @@ export default async function ReviewDetails({
 }: {
   params: Promise<{ reviewId: string; resourceId: string }>;
 }) {
+  await new Promise((resolve)=>setTimeout(resolve, 2000))
   const { reviewId, resourceId } = await params;
 
   const resource = resources.find((item) => item.id.toString() === resourceId);

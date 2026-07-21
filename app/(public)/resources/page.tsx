@@ -1,8 +1,10 @@
 import Link from "next/link";
-import ResourceCard from "../components/ResourcesCard";
-import { resources } from "../data/data";
+import ResourceCard from "../../components/ResourcesCard";
+import { resources } from "../../data/data";
 
-export default function Resources() {
+export default async function Resources() {
+  await new Promise((resolve) => setTimeout(resolve, 3000))
+  
   return (
     <>
       {/* Header with count */}
@@ -31,7 +33,7 @@ export default function Resources() {
       {/* Resources Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
         {resources.map((item) => (
-          <Link key={item.id} href={`/resources/${item.id}`} className="block">
+          <Link key={item.id} href={`/resources/${item.id}`} className="block" prefetch={false}>
             <ResourceCard resource={item} />
           </Link>
         ))}

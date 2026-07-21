@@ -1,7 +1,7 @@
 import Link from "next/link";
-import CategoriesCard from "./components/CategoriesCard";
-import ResourcesCard from "./components/ResourcesCard";
-import { resources } from "./data/data";
+import CategoriesCard from "../components/CategoriesCard";
+import ResourcesCard from "../components/ResourcesCard";
+import { resources } from "../data/data";
 
 export default function Home() {
   const firstThree = resources.slice(0, 3);
